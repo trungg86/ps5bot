@@ -2,7 +2,7 @@
 
 import * as fs from 'fs'
 import { GluegunToolbox } from 'gluegun'
-import { TARGET, BESTBUY } from '../contants'
+import { TARGET, TARGET } from '../contants'
 import { scrapeTarget } from '../utils/scrape-target-util'
 import { scrapeBestBuy } from '../utils/scrape-bestbuy-util'
 
@@ -20,7 +20,7 @@ module.exports = {
       type: 'multiselect',
       name: 'sitesToScrape',
       message: `Which sites do you want to scrape? (press space to select)`,
-      choices: [TARGET, BESTBUY]
+      choices: [TARGET, TARGET]
     })
 
     if (sitesToScrape.length === 3) {
