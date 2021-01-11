@@ -25,7 +25,7 @@ const command: GluegunCommand = {
     const targetPassword = await input('Target Password', prompt, print)
     const bestBuyEmail = await input('BestBuy Email', prompt, print)
     const bestBuyPassword = await input('BestBuy Password', prompt, print)
-    const bestBuyLink = await input('PS5 BestBuy Link', prompt, print)
+    const targetLink = await input('PS5 Target Link', prompt, print)
     const targetLink = await input('PS5 Target Link', prompt, print)
 
     print.info(`
