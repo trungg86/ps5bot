@@ -74,7 +74,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     while (true) {
       try {
         await page.waitForSelector(
-          'button[data-test="orderPickupButton"]',
+          'button[data-test="shipItButton"]',
           {
             timeout: 10000
           }
@@ -92,7 +92,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
 
       try {
         await page.waitForSelector(
-          'button[data-test="orderPickupButton"]',
+          'button[data-test="shipItButton"]',
           {
             timeout: 10000
           }
@@ -121,7 +121,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     }
     else if (shipItOnly) {
       const addToCartButtonShip = await page.$(
-        'button[data-test="orderPickupButton"]'
+        'button[data-test="shipItButton"]'
       )
 
       await addToCartButtonShip.click()
