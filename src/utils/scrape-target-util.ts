@@ -92,7 +92,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
 
       try {
         await page.waitForSelector(
-          'button[data-test="shipItButton"]',
+          'button[data-test="orderPickupButton"]',
           {
             timeout: 10000
           }
