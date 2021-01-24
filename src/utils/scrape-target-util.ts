@@ -74,25 +74,7 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     while (true) {
       try {
         await page.waitForSelector(
-          'button[data-test="orderPickupButton"]',
-          {
-            timeout: 10000
-          }
-        )
-        pickUpOnly = true;
-        break
-      } catch (error) {
-        try {
-          await page.reload()
-        }
-        catch (error) {
-          continue
-        }
-      }
-
-      try {
-        await page.waitForSelector(
-          'button[data-test="orderPickupButton"]',
+          'button[data-test="shipItButton"]',
           {
             timeout: 10000
           }
@@ -112,19 +94,12 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     //Add To Cart
     console.log("Target: Trying to click Add to cart")
 
-    if (pickUpOnly) {
+    if (shipItOnly) {
       const addToCartButton = await page.$(
-        'button[data-test="orderPickupButton"]'
-      )
-
-      await addToCartButton.click()
-    }
-    else if (shipItOnly) {
-      const addToCartButtonShip = await page.$(
         'button[data-test="shipItButton"]'
       )
 
-      await addToCartButtonShip.click()
+      await addToCartButton.click()
     }
 
 
