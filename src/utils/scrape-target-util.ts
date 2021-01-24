@@ -65,7 +65,6 @@ export const scrapeTarget = async (config: { [key: string]: string }) => {
     //Go to item page
     await page.goto(targetLink)
 
-    let pickUpOnly: boolean = false;
     let shipItOnly: boolean = false;
 
 
